@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mybatis.mapper.UserMapper">
+
+	<resultMap id="result" type="userModel">
+		<id column="id" property="id" />
+		<result column="first_name" property="firstName" />
+		<result column="last_name" property="lastName" />
+	</resultMap>
+
+	<select id="getAllUser" resultMap="result"
+		resultType="userModel">
+		SELECT * FROM user_details;
+	</select>
+
+</mapper>
